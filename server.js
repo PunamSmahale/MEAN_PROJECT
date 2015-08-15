@@ -26,4 +26,4 @@ var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
 	
 });
 
-app.listen(8080);
+app.listen(config.PORT);
