@@ -1,13 +1,14 @@
 var express = require("express"),
 	cons = require("consolidate"),
 	mongoClient = require("mongodb").MongoClient,
-	app = express();
+	app = express(),
+	config = require("./config");
 
 app.engine("html", cons.swig);
 app.set("view engine", 'html');
 app.set("views", __dirname + "/views/");
 
-var mongoConnection = mongoClient.connect("mongodb://localhost:27017/meanDb", function(err, db){
+var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
 	if(err) throw err;
 
 	app.get("/", function(request, response){
