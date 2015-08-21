@@ -15,7 +15,7 @@ app.get("*", function(request, response){
 	});
 	
 	
-var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
+/*var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
 	if(err) throw err;
 
 console.log("Inside the Mongo connect");
@@ -38,7 +38,7 @@ console.log("Inside the Mongo connect");
 	
 	
 	
-// });
+// });*/
 
 app.listen(config.PORT , function(){
 	console.log("Listening to port" + config.PORT);
