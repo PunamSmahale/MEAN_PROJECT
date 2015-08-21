@@ -11,6 +11,7 @@ app.set("views", __dirname + "/views/");
 
 app.get("*", function(request, response){
 		response.send("Page Not Found, please try a different path.");
+		response.render("Home", "Punam Mahale");
 	});
 	
 // var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
