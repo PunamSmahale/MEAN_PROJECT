@@ -11,7 +11,12 @@ app.set("views", __dirname + "/views/");
 
 app.get("*", function(request, response){
 		response.send("Page Not Found, please try a different path.");
-		response.render("Home", "Punam Mahale");
+
+		mongoClient.connect(config.MONGO_URI, function(err, db){
+				if(err) response.send("Error connecting the database");
+				
+				response.send("Success!");
+		});
 	});
 	
 // var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
