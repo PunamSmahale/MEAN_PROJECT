@@ -12,6 +12,7 @@ app.set("views", __dirname + "/views/");
 app.get("*", function(request, response){
 		response.send("Page Not Found, please try a different path.");
 	});
+	
 // var mongoConnection = mongoClient.connect(config.MONGO_URI, function(err, db){
 // 	if(err) throw err;
 
