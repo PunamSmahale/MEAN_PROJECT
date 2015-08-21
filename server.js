@@ -8,11 +8,6 @@ app.engine("html", cons.swig);
 app.set("view engine", 'html');
 app.set("views", __dirname + "/views/");
 
-
-app.get("*", function(request, response){
-	response.send("Page Not Found");
-});
-
 app.get("/", function(request, response){
 	mongoClient.connect(config.MONGO_URI, function(err, db){
 		if(err) throw err;
@@ -26,6 +21,11 @@ app.get("/", function(request, response){
 		});	
 	});
 	
+});
+
+
+app.get("*", function(request, response){
+	response.send("Page Not Found");
 });
 
 app.listen(config.PORT , function(){
