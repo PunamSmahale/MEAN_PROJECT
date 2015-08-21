@@ -10,7 +10,7 @@ app.set("views", __dirname + "/views/");
 
 
 app.get("*", function(request, response){
-		response.send("Page Not Found, please try a different path.");
+		response.send(config.MONGO_URI);
 
 		mongoClient.connect(config.MONGO_URI, function(err, db){
 				if(err) response.send("Error connecting the database");
