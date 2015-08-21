@@ -10,7 +10,7 @@ app.set("views", __dirname + "/views/");
 
 
 app.get("*", function(request, response){
-		response.send(config.MONGO_URI + " " + process.env.MONGOLAB_URI +  "  " + process.env.NODE_ENV );
+		response.send(config.MONGO_URI + " " + process.env.MONGO_URI +  "  " + process.env.NODE_ENV );
 
 		// mongoClient.connect(config.MONGO_URI, function(err, db){
 		// 		if(err) response.send("Error connecting the database");
