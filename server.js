@@ -10,7 +10,7 @@ app.set("views", __dirname + "/views/");
 
 
 app.get("*", function(request, response){
-		response.send(config.MONGO_URI + process.env.mongo_uri);
+		//response.send(config.MONGO_URI + process.env.mongo_uri);
 
 response.send("hi" + process.env.PORT);
 		mongoClient.connect(config.MONGO_URI, function(err, db){
